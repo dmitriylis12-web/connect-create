@@ -56,6 +56,7 @@ const testimonials: TestimonialCardProps[] = [
     title: "NY Best Selling Author, 30 Year Business Veteran And CEO Of 123Employee With Over 500 Employees",
     result: "$500K Closed Deal On His 1st Call",
     duration: "00:42",
+    embedUrl: "https://www.instagram.com/p/CNaP-mCnhts/embed",
   },
   {
     name: "Jeff Lerner",
