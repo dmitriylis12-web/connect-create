@@ -96,6 +96,13 @@ const testimonials: TestimonialCardProps[] = [
     result: "7X His Income in 14 Months",
     duration: "00:31",
   },
+  {
+    name: "Testimonial",
+    title: "Real results from the Personal Brand Secrets system",
+    result: "Amazing Transformation",
+    duration: "01:00",
+    embedUrl: "https://www.instagram.com/reel/CUIZYNfly2pmw0sNl44qqo9RNBcxjk7FAVwHss0/embed",
+  },
 ];
 
 const Testimonials = () => {
