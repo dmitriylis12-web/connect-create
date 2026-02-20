@@ -4,6 +4,8 @@ import DigitalCloning from "@/components/DigitalCloning";
 import WhosThisFor from "@/components/WhosThisFor";
 import NetworkSection from "@/components/NetworkSection";
 import TrustSection from "@/components/TrustSection";
+import Warning from "@/components/Warning";
+import NetworkProof from "@/components/NetworkProof";
 import CTAButton from "@/components/CTAButton";
 
 const Index = () => {
@@ -16,7 +18,9 @@ const Index = () => {
       <WhosThisFor />
       <NetworkSection />
       <TrustSection />
-      
+      <Warning />
+      <NetworkProof />
+
       {/* Footer */}
       <footer className="py-10 text-center border-t border-border">
         <p className="text-muted-foreground text-sm">
