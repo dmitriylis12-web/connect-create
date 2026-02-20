@@ -6,6 +6,10 @@ import NetworkSection from "@/components/NetworkSection";
 import TrustSection from "@/components/TrustSection";
 import Warning from "@/components/Warning";
 import NetworkProof from "@/components/NetworkProof";
+import MoreProof from "@/components/MoreProof";
+import WorksFor from "@/components/WorksFor";
+import MyJourney from "@/components/MyJourney";
+import SiteFooter from "@/components/SiteFooter";
 import CTAButton from "@/components/CTAButton";
 
 const Index = () => {
@@ -20,13 +24,10 @@ const Index = () => {
       <TrustSection />
       <Warning />
       <NetworkProof />
-
-      {/* Footer */}
-      <footer className="py-10 text-center border-t border-border">
-        <p className="text-muted-foreground text-sm">
-          © {new Date().getFullYear()} Personal Brand Secrets. All Rights Reserved.
-        </p>
-      </footer>
+      <MoreProof />
+      <WorksFor />
+      <MyJourney />
+      <SiteFooter />
     </main>
   );
 };
