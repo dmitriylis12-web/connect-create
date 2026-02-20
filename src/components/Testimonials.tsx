@@ -6,9 +6,10 @@ interface TestimonialCardProps {
   title: string;
   result: string;
   duration: string;
+  embedUrl?: string;
 }
 
-const TestimonialCard = ({ name, title, result, duration }: TestimonialCardProps) => (
+const TestimonialCard = ({ name, title, result, duration, embedUrl }: TestimonialCardProps) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -16,15 +17,25 @@ const TestimonialCard = ({ name, title, result, duration }: TestimonialCardProps
     transition={{ duration: 0.5 }}
     className="bg-card border border-border rounded-xl overflow-hidden group"
   >
-    {/* Video placeholder */}
-    <div className="relative aspect-video bg-secondary flex items-center justify-center cursor-pointer group-hover:bg-secondary/80 transition-colors">
-      <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform">
-        <Play className="w-7 h-7 text-primary-foreground ml-1" />
+    {embedUrl ? (
+      <div className="aspect-video">
+        <iframe
+          src={embedUrl}
+          className="w-full h-full border-0"
+          allowFullScreen
+          loading="lazy"
+        />
       </div>
-      <span className="absolute bottom-3 right-3 bg-background/80 text-foreground text-xs px-2 py-1 rounded">
-        {duration}
-      </span>
-    </div>
+    ) : (
+      <div className="relative aspect-video bg-secondary flex items-center justify-center cursor-pointer group-hover:bg-secondary/80 transition-colors">
+        <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform">
+          <Play className="w-7 h-7 text-primary-foreground ml-1" />
+        </div>
+        <span className="absolute bottom-3 right-3 bg-background/80 text-foreground text-xs px-2 py-1 rounded">
+          {duration}
+        </span>
+      </div>
+    )}
     <div className="p-5 space-y-2">
       <h3 className="text-primary font-bold text-lg font-['Oswald'] uppercase">{result}</h3>
       <p className="text-foreground font-semibold">{name}</p>
@@ -51,6 +62,7 @@ const testimonials: TestimonialCardProps[] = [
     title: "100 Million CEO/Founder, Speaker, Investor, Influencer, Creative Trainer To Over 150,000 Awesome Life Seekers",
     result: "From Stuck at 5K To 208K On IG In 9 Months",
     duration: "03:13",
+    embedUrl: "https://www.instagram.com/p/CNaUL6wJ1ib/embed",
   },
   {
     name: "Beate",
