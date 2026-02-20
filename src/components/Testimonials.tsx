@@ -50,6 +50,7 @@ const testimonials: TestimonialCardProps[] = [
     title: "Now the CEO of 5 Companies, Author, Top Trainer In The Automotive Industry, Speaker, Investor, Influencer",
     result: "$250K To $4 Million In Less Than 2 Years",
     duration: "05:26",
+    embedUrl: "https://www.instagram.com/tv/CSX1Y63H1Kb/embed",
   },
   {
     name: "Daven Michaels",
