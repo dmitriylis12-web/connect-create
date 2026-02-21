@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import CTAButton from "./CTAButton";
 
+
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-16 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary to-background" />
-      
+
+
       {/* Glow effect */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[120px]" />
 

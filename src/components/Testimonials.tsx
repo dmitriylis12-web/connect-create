@@ -71,37 +71,42 @@ const testimonials: TestimonialCardProps[] = [
     title: "Successful Business Strategist, Author, Speaker. Sold Her First Multi-Million Dollar Business To Bill Gates",
     result: "From 2K To 50K On IG In 45 Days",
     duration: "01:05",
+    embedUrl: "https://drive.google.com/file/d/1YnjYzZdqp8DIKjl0q4bYtoygPVtKxyDx/preview",
   },
   {
     name: "Leo",
     title: "Scales E-com Brands & Now Launching New Ventures. Taking It To 7 Figures In The First Year",
     result: "From $6K/Month to $42K/Month In Less Than 55 Days",
     duration: "02:06",
+    embedUrl: "https://drive.google.com/file/d/1DahuSg-bnHNvHStnjIX1gjs8u5NTnOWT/preview",
   },
   {
     name: "Dr. James Neilson",
     title: "Multi 7 Figures CEO, Speaker, Author, Investor, Influencer",
     result: "16X His Audience in 3 Months",
     duration: "02:06",
+    embedUrl: "https://drive.google.com/file/d/1vX89C21d2TY7Szbm3Gswnud6_az-GB5u/preview",
   },
   {
     name: "Trent",
     title: "Founder Flowster.app #254 on Inc 5000, Helped 27,000 founders, Investor, Influencer",
     result: "1950% Social Media Growth in 90 Days",
     duration: "01:30",
+    embedUrl: "https://drive.google.com/file/d/1HkpHhrDTPVXF77VYS_fuypd9PoonvFfI/preview",
   },
   {
     name: "Rudy",
     title: "CEO of 5 Companies, Author, Top Trainer In The Automotive Industry, Speaker, Investor",
     result: "7X His Income in 14 Months",
     duration: "00:31",
+    embedUrl: "https://drive.google.com/file/d/1qD-V_lT77rPvTIpDuxDkIfEXPj1znpqq/preview",
   },
   {
     name: "Testimonial",
     title: "Real results from the Personal Brand Secrets system",
     result: "Amazing Transformation",
     duration: "01:00",
-    embedUrl: "https://www.instagram.com/reel/CUIZYNfly2pmw0sNl44qqo9RNBcxjk7FAVwHss0/embed",
+    embedUrl: "https://drive.google.com/file/d/1upPw01gzthKl8HmxYRJXbUGKAaN12Af-/preview",
   },
 ];
 
