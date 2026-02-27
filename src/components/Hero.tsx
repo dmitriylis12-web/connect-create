@@ -46,6 +46,21 @@ const Hero = () => {
         </motion.h2>
 
         <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="w-full max-w-2xl mx-auto rounded-xl overflow-hidden border border-border"
+          style={{ aspectRatio: "9/16", maxHeight: "70vh" }}
+        >
+          <iframe
+            src="https://www.instagram.com/reel/DVKIgoDAV_N/embed"
+            className="w-full h-full border-0"
+            allowFullScreen
+            loading="lazy"
+          />
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
