@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import CTAButton from "./CTAButton";
-import pdfPage4 from "@/assets/pdf-page-4.jpg";
-import pdfPage5 from "@/assets/pdf-page-5.jpg";
 
 const categories = [
   {
@@ -56,25 +54,6 @@ const WorksFor = () => {
         Our System Works For
       </motion.h2>
 
-      {/* Original page screenshots */}
-      <div className="space-y-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="rounded-xl overflow-hidden border border-border"
-        >
-          <img src={pdfPage4} alt="System works for companies, speakers, coaches" className="w-full h-auto" loading="lazy" />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="rounded-xl overflow-hidden border border-border"
-        >
-          <img src={pdfPage5} alt="System works for podcasters, real estate, authors, educators" className="w-full h-auto" loading="lazy" />
-        </motion.div>
-      </div>
 
       {categories.map((cat, ci) => (
         <motion.div

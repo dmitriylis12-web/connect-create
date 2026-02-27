@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import pdfPage1 from "@/assets/pdf-page-1.jpg";
+
 
 const testimonials = [
   {
@@ -67,15 +67,6 @@ const Testimonials = () => {
         </p>
       </motion.div>
 
-      {/* Original page screenshot */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="mb-12 rounded-xl overflow-hidden border border-border"
-      >
-        <img src={pdfPage1} alt="Client success stories and testimonials" className="w-full h-auto" loading="lazy" />
-      </motion.div>
 
       {/* Text-based testimonial cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

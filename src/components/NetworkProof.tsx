@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import CTAButton from "./CTAButton";
-import pdfPage2 from "@/assets/pdf-page-2.jpg";
+
 
 const topPerformers = [
   { title: "Multi 8-Figure Entrepreneur" },
@@ -35,15 +35,6 @@ const brandTestimonials = [
 const NetworkProof = () => {
   return (
     <section className="px-4 py-20 space-y-20">
-      {/* Original page screenshot */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="max-w-5xl mx-auto rounded-xl overflow-hidden border border-border"
-      >
-        <img src={pdfPage2} alt="Network with top performers and business moguls" className="w-full h-auto" loading="lazy" />
-      </motion.div>
 
       {/* Top Performers */}
       <div className="max-w-5xl mx-auto text-center space-y-10">
