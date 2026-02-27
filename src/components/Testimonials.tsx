@@ -7,9 +7,11 @@ interface TestimonialCardProps {
   result: string;
   duration: string;
   embedUrl?: string;
+  /** e.g. "9/16" for portrait, "4/5" for IG post, "16/9" for landscape */
+  ratio?: string;
 }
 
-const TestimonialCard = ({ name, title, result, duration, embedUrl }: TestimonialCardProps) => (
+const TestimonialCard = ({ name, title, result, duration, embedUrl, ratio = "9/16" }: TestimonialCardProps) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -18,7 +20,7 @@ const TestimonialCard = ({ name, title, result, duration, embedUrl }: Testimonia
     className="bg-card border border-border rounded-xl overflow-hidden group"
   >
     {embedUrl ? (
-      <div className="aspect-video">
+      <div className="w-full overflow-hidden" style={{ aspectRatio: ratio }}>
         <iframe
           src={embedUrl}
           className="w-full h-full border-0"
@@ -27,7 +29,10 @@ const TestimonialCard = ({ name, title, result, duration, embedUrl }: Testimonia
         />
       </div>
     ) : (
-      <div className="relative aspect-video bg-secondary flex items-center justify-center cursor-pointer group-hover:bg-secondary/80 transition-colors">
+      <div
+        className="relative bg-secondary flex items-center justify-center cursor-pointer group-hover:bg-secondary/80 transition-colors"
+        style={{ aspectRatio: ratio }}
+      >
         <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform">
           <Play className="w-7 h-7 text-primary-foreground ml-1" />
         </div>
@@ -51,6 +56,7 @@ const testimonials: TestimonialCardProps[] = [
     result: "$250K To $4 Million In Less Than 2 Years",
     duration: "05:26",
     embedUrl: "https://www.instagram.com/tv/CSX1Y63H1Kb/embed",
+    ratio: "4/5",
   },
   {
     name: "Daven Michaels",
@@ -58,6 +64,7 @@ const testimonials: TestimonialCardProps[] = [
     result: "$500K Closed Deal On His 1st Call",
     duration: "00:42",
     embedUrl: "https://www.instagram.com/p/CNaP-mCnhts/embed",
+    ratio: "4/5",
   },
   {
     name: "Jeff Lerner",
@@ -65,6 +72,7 @@ const testimonials: TestimonialCardProps[] = [
     result: "From Stuck at 5K To 208K On IG In 9 Months",
     duration: "03:13",
     embedUrl: "https://www.instagram.com/p/CNaUL6wJ1ib/embed",
+    ratio: "4/5",
   },
   {
     name: "Beate",
@@ -72,6 +80,7 @@ const testimonials: TestimonialCardProps[] = [
     result: "From 2K To 50K On IG In 45 Days",
     duration: "01:05",
     embedUrl: "https://drive.google.com/file/d/1YnjYzZdqp8DIKjl0q4bYtoygPVtKxyDx/preview",
+    ratio: "9/16",
   },
   {
     name: "Leo",
@@ -79,6 +88,7 @@ const testimonials: TestimonialCardProps[] = [
     result: "From $6K/Month to $42K/Month In Less Than 55 Days",
     duration: "02:06",
     embedUrl: "https://drive.google.com/file/d/1DahuSg-bnHNvHStnjIX1gjs8u5NTnOWT/preview",
+    ratio: "9/16",
   },
   {
     name: "Dr. James Neilson",
@@ -86,6 +96,7 @@ const testimonials: TestimonialCardProps[] = [
     result: "16X His Audience in 3 Months",
     duration: "02:06",
     embedUrl: "https://drive.google.com/file/d/1vX89C21d2TY7Szbm3Gswnud6_az-GB5u/preview",
+    ratio: "9/16",
   },
   {
     name: "Trent",
@@ -93,6 +104,7 @@ const testimonials: TestimonialCardProps[] = [
     result: "1950% Social Media Growth in 90 Days",
     duration: "01:30",
     embedUrl: "https://drive.google.com/file/d/1HkpHhrDTPVXF77VYS_fuypd9PoonvFfI/preview",
+    ratio: "9/16",
   },
   {
     name: "Rudy",
@@ -100,6 +112,7 @@ const testimonials: TestimonialCardProps[] = [
     result: "7X His Income in 14 Months",
     duration: "00:31",
     embedUrl: "https://drive.google.com/file/d/1qD-V_lT77rPvTIpDuxDkIfEXPj1znpqq/preview",
+    ratio: "9/16",
   },
   {
     name: "Testimonial",
@@ -107,6 +120,7 @@ const testimonials: TestimonialCardProps[] = [
     result: "Amazing Transformation",
     duration: "01:00",
     embedUrl: "https://drive.google.com/file/d/1upPw01gzthKl8HmxYRJXbUGKAaN12Af-/preview",
+    ratio: "9/16",
   },
 ];
 
@@ -128,7 +142,7 @@ const Testimonials = () => {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
         {testimonials.map((t, i) => (
           <TestimonialCard key={i} {...t} />
         ))}
