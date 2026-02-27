@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
-
+import page1 from "@/assets/page-1.png";
+import page2 from "@/assets/page-2.png";
+import page3 from "@/assets/page-3.png";
+import page4 from "@/assets/page-4.png";
 
 const testimonials = [
   {
@@ -67,6 +70,21 @@ const Testimonials = () => {
         </p>
       </motion.div>
 
+
+      {/* Screenshot proof */}
+      <div className="space-y-6 mb-12">
+        {[page1, page2, page3, page4].map((src, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-xl overflow-hidden border border-border"
+          >
+            <img src={src} alt={`Testimonial proof ${i + 1}`} className="w-full h-auto" loading="lazy" />
+          </motion.div>
+        ))}
+      </div>
 
       {/* Text-based testimonial cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

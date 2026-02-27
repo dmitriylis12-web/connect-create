@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import CTAButton from "./CTAButton";
+import page6 from "@/assets/page-6.png";
 
 const Hero = () => {
   return (
@@ -56,6 +57,16 @@ const Hero = () => {
         >
           Smart People Are Skeptical...That's Totally Normal. I Wouldn't Expect You To, So Just Scroll Below To Make Up Your Own Mind...
         </motion.p>
+
+        {/* Joe Cury Profile & Digital Cloning Preview */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="rounded-xl overflow-hidden border border-border mt-8"
+        >
+          <img src={page6} alt="Joe Cury profile and Digital Cloning system" className="w-full h-auto" loading="lazy" />
+        </motion.div>
 
         {/* As Seen On */}
         <motion.div
