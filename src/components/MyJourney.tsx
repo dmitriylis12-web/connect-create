@@ -1,9 +1,20 @@
 import { motion } from "framer-motion";
 import CTAButton from "./CTAButton";
+import pdfPage6 from "@/assets/pdf-page-6.jpg";
 
 const MyJourney = () => {
   return (
     <section className="px-4 py-20 max-w-4xl mx-auto space-y-16">
+      {/* Original page screenshot */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="rounded-xl overflow-hidden border border-border"
+      >
+        <img src={pdfPage6} alt="Joe Cury's journey from homeless to $18 million" className="w-full h-auto" loading="lazy" />
+      </motion.div>
+
       {/* Journey */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

@@ -1,15 +1,10 @@
 import { motion } from "framer-motion";
 import CTAButton from "./CTAButton";
 
-
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-16 overflow-hidden">
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary to-background" />
-
-
-      {/* Glow effect */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[120px]" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
@@ -46,27 +41,21 @@ const Hero = () => {
         </motion.h2>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="w-full max-w-2xl mx-auto rounded-xl overflow-hidden border border-border"
-          style={{ aspectRatio: "9/16", maxHeight: "70vh" }}
-        >
-          <iframe
-            src="https://www.instagram.com/reel/DVKIgoDAV_N/embed"
-            className="w-full h-full border-0"
-            allowFullScreen
-            loading="lazy"
-          />
-        </motion.div>
-
-        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
           <CTAButton />
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-muted-foreground italic text-lg"
+        >
+          Smart People Are Skeptical...That's Totally Normal. I Wouldn't Expect You To, So Just Scroll Below To Make Up Your Own Mind...
+        </motion.p>
 
         {/* As Seen On */}
         <motion.div
