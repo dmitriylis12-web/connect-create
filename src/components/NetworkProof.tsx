@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
 import CTAButton from "./CTAButton";
+import page5 from "@/assets/page-5.png";
+import page18 from "@/assets/page-18.png";
+import page7 from "@/assets/page-7.png";
+import page8 from "@/assets/page-8.png";
+import page9 from "@/assets/page-9.png";
+import page10 from "@/assets/page-10.png";
+import page11 from "@/assets/page-11.png";
 
 
 const topPerformers = [
@@ -35,6 +42,20 @@ const brandTestimonials = [
 const NetworkProof = () => {
   return (
     <section className="px-4 py-20 space-y-20">
+      {/* Screenshot proof */}
+      <div className="max-w-5xl mx-auto space-y-6">
+        {[page5, page18, page7, page8, page9, page10, page11].map((src, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-xl overflow-hidden border border-border"
+          >
+            <img src={src} alt={`Network proof ${i + 1}`} className="w-full h-auto" loading="lazy" />
+          </motion.div>
+        ))}
+      </div>
 
       {/* Top Performers */}
       <div className="max-w-5xl mx-auto text-center space-y-10">
