@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import CTAButton from "./CTAButton";
-import pdfPage3 from "@/assets/pdf-page-3.jpg";
+
 
 const moreTestimonials = [
   { name: "Julio", role: "500K Subs Youtuber • Content Creator", quote: "I just crossed 40K Followers! Thank you Joe!" },
@@ -26,16 +26,6 @@ const systemAllows = [
 const MoreProof = () => {
   return (
     <section className="px-4 py-20 space-y-16 max-w-5xl mx-auto">
-      {/* Original page screenshot */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="rounded-xl overflow-hidden border border-border"
-      >
-        <img src={pdfPage3} alt="More testimonials and system achievements" className="w-full h-auto" loading="lazy" />
-      </motion.div>
-
       {/* More quotes */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {moreTestimonials.map((t, i) => (
