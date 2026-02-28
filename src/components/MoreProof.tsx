@@ -1,13 +1,19 @@
 import { motion } from "framer-motion";
 import CTAButton from "./CTAButton";
-import page12 from "@/assets/page-12.png";
-import page13 from "@/assets/page-13.png";
-import page14 from "@/assets/page-14.png";
-import page15 from "@/assets/page-15.png";
-import page16 from "@/assets/page-16.png";
-import page17 from "@/assets/page-17.png";
-import page19 from "@/assets/page-19.png";
-
+// Dynamically load proof images (page-12 to page-99), excluding page-18 which is in NetworkProof
+const proofImages = Object.entries(import.meta.glob("@/assets/page-*.png", { eager: true }))
+  .filter(([path]) => {
+    const match = path.match(/page-(\d+)\.png$/);
+    if (!match) return false;
+    const num = parseInt(match[1]);
+    return num >= 12 && num !== 18;
+  })
+  .sort((a, b) => {
+    const numA = parseInt(a[0].match(/page-(\d+)\.png$/)![1]);
+    const numB = parseInt(b[0].match(/page-(\d+)\.png$/)![1]);
+    return numA - numB;
+  })
+  .map(([, mod]) => (mod as { default: string }).default);
 
 const moreTestimonials = [
   { name: "Julio", role: "500K Subs Youtuber • Content Creator", quote: "I just crossed 40K Followers! Thank you Joe!" },
@@ -34,8 +40,9 @@ const MoreProof = () => {
   return (
     <section className="px-4 py-20 space-y-16 max-w-5xl mx-auto">
       {/* Screenshot proof */}
-      <div className="space-y-6">
-        {[page12, page13, page14, page15, page16, page17, page19].map((src, i) => (
+      {/* Screenshot proof */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {proofImages.map((src, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 30 }}
