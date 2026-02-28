@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 import CTAButton from "./CTAButton";
-// Temporarily removed - waiting for uploads
+import page12 from "@/assets/page-12.png";
+import page13 from "@/assets/page-13.png";
+import page14 from "@/assets/page-14.png";
+import page15 from "@/assets/page-15.png";
+import page16 from "@/assets/page-16.png";
+import page17 from "@/assets/page-17.png";
+import page19 from "@/assets/page-19.png";
 
 
 const moreTestimonials = [
@@ -27,7 +33,20 @@ const systemAllows = [
 const MoreProof = () => {
   return (
     <section className="px-4 py-20 space-y-16 max-w-5xl mx-auto">
-      {/* Screenshot proof - waiting for image uploads */}
+      {/* Screenshot proof */}
+      <div className="space-y-6">
+        {[page12, page13, page14, page15, page16, page17, page19].map((src, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-xl overflow-hidden border border-border"
+          >
+            <img src={src} alt={`More proof ${i + 1}`} className="w-full h-auto" loading="lazy" />
+          </motion.div>
+        ))}
+      </div>
 
       {/* More quotes */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
