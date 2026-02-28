@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import page1 from "@/assets/page-1.png";
 import page2 from "@/assets/page-2.png";
 import page3 from "@/assets/page-3.png";
 import page4 from "@/assets/page-4.png";
@@ -73,7 +72,7 @@ const Testimonials = () => {
 
       {/* Screenshot proof */}
       <div className="space-y-6 mb-12">
-        {[page1, page2, page3, page4].map((src, i) => (
+        {[page2, page3, page4].map((src, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 30 }}
